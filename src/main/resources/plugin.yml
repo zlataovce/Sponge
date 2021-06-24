@@ -1,0 +1,6 @@
+name: Sponge
+version: 1.8
+author: zlataovce
+main: me.zlataovce.sponge.Main
+description: Utilities for the SMP ran by Scorponist ZlataOvce.
+api-version: 1.16

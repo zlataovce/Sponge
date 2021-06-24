@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        maven {
+            url = 'https://repo.screamingsandals.org/public'
+        }
+    }
+    dependencies {
+        classpath 'org.screamingsandals.gradle.builder:screaming-plugin-builder:1.0.43'
+    }
+}
+
+plugins {
+    id 'java'
+}
+apply plugin: 'org.screamingsandals.gradle.builder'
+
+repositories {
+    mavenCentral()
+    maven {
+        name "papermc"
+        url "https://papermc.io/repo/repository/maven-public/"
+    }
+}
+
+enableShadowPlugin() // enable shading
+
+group 'me.zlataovce'
+version '1.8-SNAPSHOT'
+defaultTasks 'clean', 'screamCompile'
+
+dependencies {
+    compileOnly paper()
+    implementation("cloud.commandframework:cloud-paper:1.4.0")
+    implementation("org.spongepowered:configurate-yaml:4.1.1")
+    implementation("io.papermc:paperlib:1.0.6")
+}
+
+shadowJar {
+    relocate 'cloud.commandframework', 'me.zlataovce.sponge.lib.cloud'
+    relocate 'org.spongepowered.configurate', 'me.zlataovce.sponge.lib.configurate'
+    relocate 'io.papermc.lib', 'me.zlataovce.sponge.lib.paperlib'
+}

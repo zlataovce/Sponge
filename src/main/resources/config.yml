@@ -1,0 +1,19 @@
+# Should Sponge log cheating?
+anticheat: true
+# Sets the CPS alert threshold for the InteractFrequency alert
+clickspeed: 20
+# Should Sponge cancel hits that triggered the InteractFrequency alert?
+cancelclick: true
+# Should Sponge perform Paper fixes for Spigot servers?
+paper-fixes: true
+# Should gravity apply to armor stands? (needs paper-fixes turned on)
+armorstand-gravity: false
+# Should Sponge block any item duplication attempts (TNT/rail dupe)? (needs paper-fixes turned on)
+disable-duplication: true
+# Should the /rules command be enabled?
+rules-command: true
+# Rules command content
+rules:
+  - "1. Killing players is not allowed, unless the player agrees with it."
+  - "2. Trapping roads, houses, shops and farms is prohibited."
+  - "3. Griefing is prohibited."
